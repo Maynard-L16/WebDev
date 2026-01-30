@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Technical Documentation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      display: flex;
+    }
+
+    /* Navbar */
+    #navbar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100vh;
+      background-color: #f4f4f4;
+      padding: 20px;
+      overflow-y: auto;
+      border-right: 2px solid #ccc;
+    }
+
+    #navbar header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .nav-link {
+      display: block;
+      margin: 8px 0;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .nav-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Main documentation */
+    #main-doc {
+      margin-left: 270px;
+      padding: 20px;
+    }
+
+    .main-section {
+      margin-bottom: 40px;
+    }
+
+    .main-section header {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    code {
+      display: block;
+      background: #eee;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    /* Media Query */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+      }
+
+      #main-doc {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <header>JavaScript Basics</header>
+    <a href="#Introduction_to_JavaScript" class="nav-link">Introduction to JavaScript</a>
+    <a href="#Variables_and_Data_Types" class="nav-link">Variables and Data Types</a>
+    <a href="#Functions" class="nav-link">Functions</a>
+    <a href="#Loops" class="nav-link">Loops</a>
+    <a href="#Arrays" class="nav-link">Arrays</a>
+  </nav>
+
+  <main id="main-doc">
+
+    <section class="main-section" id="Introduction_to_JavaScript">
+      <header>Introduction to JavaScript</header>
+      <p>JavaScript is a programming language used to create dynamic web pages.</p>
+      <p>It runs in the browser and allows interaction with users.</p>
+      <code>console.log("Hello, world!");</code>
+      <ul>
+        <li>Client-side language</li>
+        <li>Interpreted</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Variables_and_Data_Types">
+      <header>Variables and Data Types</header>
+      <p>Variables store data values.</p>
+      <p>JavaScript supports multiple data types.</p>
+      <code>let age = 25;</code>
+      <ul>
+        <li>String</li>
+        <li>Number</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Functions">
+      <header>Functions</header>
+      <p>Functions allow code reuse.</p>
+      <p>They can accept parameters.</p>
+      <code>function greet() { return "Hi"; }</code>
+      <ul>
+        <li>Reusable blocks</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Loops">
+      <header>Loops</header>
+      <p>Loops repeat code execution.</p>
+      <p>They reduce repetition.</p>
+      <code>for (let i = 0; i < 5; i++) {}</code>
+      <ul>
+        <li>for loop</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Arrays">
+      <header>Arrays</header>
+      <p>Arrays store multiple values.</p>
+      <p>They are zero-indexed.</p>
+      <code>let colors = ["red", "blue"];</code>
+      <ul>
+        <li>Indexed collection</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>

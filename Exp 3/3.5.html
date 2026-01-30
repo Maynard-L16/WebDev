@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuralFlow - AI-Powered Productivity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #000000 0%, #580808 100%);
+        }
+
+        /* Header and Navigation */
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        #header-img {
+            height: 50px;
+            width: auto;
+        }
+
+        #nav-bar {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover {
+            background: #a8ce1d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem 5%;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, #150a85 0%, #000000 100%);
+            color: white;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Features Section */
+        #features {
+            background: white;
+        }
+
+        #features h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 3rem;
+        }
+
+        .features-container {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+        }
+
+        .feature-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background: linear-gradient(135deg, #3f659d 0%, #092d68 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #555;
+        }
+
+        /* Video Section */
+        #video-section {
+            background: linear-gradient(135deg, #000000 0%, #0a1546 100%);
+            color: white;
+        }
+
+        #video-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        #video {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Pricing Section */
+        #pricing {
+            background: white;
+        }
+
+        #pricing h2 {
+            font-size: 2.5rem;
+            color: #0a1e77;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-container {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pricing-card {
+            background: linear-gradient(135deg, #000000 0%, #2b0354 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            min-width: 280px;
+            max-width: 320px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .pricing-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        /* Contact/Form Section */
+        #contact {
+            background: linear-gradient(135deg, #000000 0%, #580157 100%);
+            color: white;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        #form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        #form h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #555;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        #email {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        #email:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        #submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #0424b6 0%, #3b0372 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        #submit:active {
+            transform: translateY(0);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            #header {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            #nav-bar {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            #hero h1 {
+                font-size: 2rem;
+            }
+
+            #hero p {
+                font-size: 1.2rem;
+            }
+
+            .features-container,
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #video {
+                height: 250px;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero h1 {
+                font-size: 1.5rem;
+            }
+
+            #hero p {
+                font-size: 1rem;
+            }
+
+            #form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <img id="header-img" src="https://via.placeholder.com/150x50/667eea/ffffff?text=NeuralFlow" alt="NeuralFlow Logo">
+        <nav id="nav-bar">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#video-section" class="nav-link">Demo</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <h1>Welcome to NeuralFlow</h1>
+            <p>AI-Powered Productivity for the Modern Workspace</p>
+            <p>Transform your workflow with intelligent automation and seamless collaboration</p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <h2>Why Choose NeuralFlow?</h2>
+            <div class="features-container">
+                <div class="feature-card">
+                    <h3>🚀 Lightning Fast</h3>
+                    <p>Experience unparalleled speed with our optimized neural networks that process your tasks in milliseconds.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 AI-Powered</h3>
+                    <p>Leverage cutting-edge artificial intelligence to automate repetitive tasks and boost your productivity.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Secure & Private</h3>
+                    <p>Your data is protected with end-to-end encryption and enterprise-grade security protocols.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Pricing Section -->
+        <section id="pricing">
+            <h2>Choose Your Plan</h2>
+            <div class="pricing-container">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">Rs.199</div>
+                    <p>per month</p>
+                    <ul>
+                        <li>5 Projects</li>
+                        <li>10GB Storage</li>
+                        <li>Basic Support</li>
+                        <li>Mobile App Access</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Professional</h3>
+                    <div class="price">Rs.299</div>
+                    <p>per month</p>
+                    <ul>
+                        <li>Unlimited Projects</li>
+                        <li>100GB Storage</li>
+                        <li>Priority Support</li>
+                        <li>Advanced AI Features</li>
+                        <li>Team Collaboration</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Rs.599</div>
+                    <p>per month</p>
+                    <ul>
+                        <li>Unlimited Everything</li>
+                        <li>1TB Storage</li>
+                        <li>24/7 Dedicated Support</li>
+                        <li>Custom AI Models</li>
+                        <li>API Access</li>
+                        <li>White-Label Options</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/Form Section -->
+        <section id="contact">
+            <h2>Get Early Access</h2>
+            <p>Join thousands of professionals already using NeuralFlow to revolutionize their workflow. Sign up now for exclusive early access!</p>
+            <form id="form" action="https://www.freecodecamp.org/email-submit" method="POST">
+                <h3>Stay Updated</h3>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email address" 
+                        required>
+                </div>
+                <input type="submit" id="submit" value="Get Started">
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 NeuralFlow. All rights reserved. | Built with passion for productivity</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Daily Grid</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Georgia, serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Main grid layout */
+    .newspaper-layout {
+      display: grid;
+      grid-template-areas:
+        "title title title"
+        "feature-article feature-article cover-image"
+        "secondary-article secondary-article cover-image"
+        "small-article1 small-article2 small-article3";
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Grid areas */
+    .title {
+      grid-area: title;
+      background: #222;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature-article {
+      grid-area: feature-article;
+      background: white;
+      padding: 15px;
+    }
+
+    .secondary-article {
+      grid-area: secondary-article;
+      background: white;
+      padding: 15px;
+    }
+
+    .cover-image {
+      grid-area: cover-image;
+      background: #eee;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .small-article1 {
+      grid-area: small-article1;
+      background: white;
+      padding: 10px;
+    }
+
+    .small-article2 {
+      grid-area: small-article2;
+      background: white;
+      padding: 10px;
+    }
+
+    .small-article3 {
+      grid-area: small-article3;
+      background: white;
+      padding: 10px;
+    }
+
+    /* Image responsiveness */
+    .cover-image img {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="newspaper-layout">
+
+    <header class="title">
+      <h1>The Daily Grid</h1>
+    </header>
+
+    <article class="feature-article">
+      <h2>Major Breakthrough in Technology</h2>
+      <p>A new innovation is changing the way people interact with digital
+         platforms across the world.</p>
+    </article>
+
+    <figure class="cover-image">
+      <img src="https://via.placeholder.com/300x400" alt="Newspaper Cover Image">
+    </figure>
+
+    <article class="secondary-article">
+      <h2>Global Markets Update</h2>
+      <p>Markets reacted positively today as investors showed renewed confidence
+         in emerging technologies.</p>
+    </article>
+
+    <article class="small-article1">
+      <h3>Local News</h3>
+      <p>Community events are bringing neighbors together.</p>
+    </article>
+
+    <article class="small-article2">
+      <h3>Sports</h3>
+      <p>The home team secured a dramatic victory last night.</p>
+    </article>
+
+    <article class="small-article3">
+      <h3>Weather</h3>
+      <p>Sunny skies are expected throughout the week.</p>
+    </article>
+
+  </main>
+
+</body>
+</html>

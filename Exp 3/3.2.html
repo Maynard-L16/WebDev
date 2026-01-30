@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Cards Display</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        #playing-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            width: 180px;
+            height: 260px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .card.hearts .left,
+        .card.hearts .right,
+        .card.hearts .middle {
+            color: #e74c3c;
+        }
+
+        .card.diamonds .left,
+        .card.diamonds .right,
+        .card.diamonds .middle {
+            color: #e74c3c;
+        }
+
+        .card.clubs .left,
+        .card.clubs .right,
+        .card.clubs .middle {
+            color: #2c3e50;
+        }
+
+        .card.spades .left,
+        .card.spades .right,
+        .card.spades .middle {
+            color: #2c3e50;
+        }
+
+        .left {
+            align-self: flex-start;
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .middle {
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .middle .suit-symbol {
+            font-size: 4rem;
+            line-height: 1;
+        }
+
+        .middle .rank {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .right {
+            align-self: flex-end;
+            font-size: 2rem;
+            font-weight: bold;
+            line-height: 1;
+            transform: rotate(180deg);
+        }
+
+        /* Suit symbols */
+        .heart::before {
+            content: '♥';
+        }
+
+        .diamond::before {
+            content: '♦';
+        }
+
+        .club::before {
+            content: '♣';
+        }
+
+        .spade::before {
+            content: '♠';
+        }
+
+        /* Add some decorative elements */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            border: 2px solid rgba(0, 0, 0, 0.05);
+            border-radius: 10px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎴 Classic Playing Cards 🎴</h1>
+    
+    <main id="playing-cards">
+        <!-- Ace of Hearts -->
+        <div class="card hearts">
+            <div class="left">
+                <div class="heart"></div>
+            </div>
+            <div class="middle">
+                <div class="suit-symbol heart"></div>
+                <div class="rank">A</div>
+            </div>
+            <div class="right">
+                <div class="heart"></div>
+            </div>
+        </div>
+
+        <!-- King of Spades -->
+        <div class="card spades">
+            <div class="left">
+                <div class="spade"></div>
+            </div>
+            <div class="middle">
+                <div class="suit-symbol spade"></div>
+                <div class="rank">K</div>
+            </div>
+            <div class="right">
+                <div class="spade"></div>
+            </div>
+        </div>
+
+        <!-- Queen of Diamonds -->
+        <div class="card diamonds">
+            <div class="left">
+                <div class="diamond"></div>
+            </div>
+            <div class="middle">
+                <div class="suit-symbol diamond"></div>
+                <div class="rank">Q</div>
+            </div>
+            <div class="right">
+                <div class="diamond"></div>
+            </div>
+        </div>
+
+        <!-- Jack of Clubs -->
+        <div class="card clubs">
+            <div class="left">
+                <div class="club"></div>
+            </div>
+            <div class="middle">
+                <div class="suit-symbol club"></div>
+                <div class="rank">J</div>
+            </div>
+            <div class="right">
+                <div class="club"></div>
+            </div>
+        </div>
+
+        <!-- 10 of Hearts -->
+        <div class="card hearts">
+            <div class="left">
+                <div class="heart"></div>
+            </div>
+            <div class="middle">
+                <div class="suit-symbol heart"></div>
+                <div class="rank">10</div>
+            </div>
+            <div class="right">
+                <div class="heart"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
