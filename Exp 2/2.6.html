@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confidential Email</title>
+  <style>
+    #email {
+      padding: 50px;
+      margin-top: 50px;
+      width: 500px;
+      border: 2px solid #333;
+      box-sizing: border-box;
+      background-color: #f8f8f8;
+      font-family: 'Courier New', monospace;
+    }
+
+    #confidential, #top-secret {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-left: 20px;
+      border: 2px solid #ff4444;
+      color: #ff4444;
+      font-weight: bold;
+      font-size: 14px;
+      transform: rotate(-15deg);
+    }
+
+    #confidential {
+      transform: rotate(15deg);
+    }
+
+    #top-secret {
+      transform: rotate(-20deg);
+    }
+
+    p {
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .blurred {
+      filter: blur(3px);
+      background-color: #ddd;
+      padding: 2px 4px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <main id="email">
+    <div id="confidential">CONFIDENTIAL</div>
+    <div id="top-secret">TOP SECRET</div>
+    
+    <p>
+      Dear Recipient, this message contains <span class="blurred">sensitive operational details</span> 
+      that require immediate attention for project deployment.
+    </p>
+    
+    <p>
+      Please review the attached <span class="blurred">financial projections Q1 2026</span> 
+      and provide feedback before the deadline.
+    </p>
+    
+    <p>
+      All <span class="blurred">strategic partner contacts</span> have been updated 
+      in the secure database for your reference.
+    </p>
+  </main>
+</body>
+</html>
